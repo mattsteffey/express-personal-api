@@ -49,6 +49,12 @@ app.get('/api', function api_index(req, res) {
   });
 });
 
+app.get('/api/videogames', function(req, res){
+  db.VideoGames.find(function(err, videogames){
+    res.json(VideoGames);
+  });
+});
+
 /**********
  * SERVER *
  **********/

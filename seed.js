@@ -30,6 +30,9 @@ var new_VideoGames = [
 },
 ];
 
+
+
+
 // db.VideoGames.remove({}, function(err, VideoGames){
 // 	if(err){console.log('Error:',err);}
 // 	else{
