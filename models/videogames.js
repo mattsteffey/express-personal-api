@@ -1,13 +1,13 @@
 var mongoose = require('mongoose');
 Schema = mongoose.Schema;
 
-var VideoGameSchema = new Schema({
+var VideoGamesSchema = new Schema({
 	title: String,
 	console: String,
 	year: String,
 	muliplayer: Boolean,
 });
 
-var VideoGame = mongoose.model('VideoGame', VideoGameSchema);
+var VideoGames = mongoose.model('VideoGames', VideoGamesSchema);
 
-module.exports = VideoGame;
+module.exports = VideoGames;
