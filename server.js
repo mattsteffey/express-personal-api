@@ -14,9 +14,27 @@ app.use(bodyParser.json());
 
 var db = require('./models');
 
+app.get('/api/profile', function(req, res){
+  res.json ({
+    name: "Matt Steffey",
+    github_link: "https://github.com/mattsteffey",
+    github_image: "https://avatars2.githubusercontent.com/u/33466125?s=460&v=4",
+    current_city: "Denver",
+    pets:[{name: "Bronson", type: "Dog", breed: "Boston Terrier"}, {name: "Bane", type: "Dog", breed: "Boston Terrier"}]
+  });
+});
 /**********
  * ROUTES *
  **********/
+
+ app.get('/api/videogames', function(req, res){
+  db.Videogames.find(function(err, videogames){
+    if(err){res.send("error getting videogames", err);}
+    res.json(videogames);
+  });
+ });
+
+
 
 // Serve static files from the `/public` directory:
 // i.e. `/images`, `/scripts`, `/styles`
@@ -34,29 +52,24 @@ app.get('/', function homepage(req, res) {
 /*
  * JSON API Endpoints
  */
+
 app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
   res.json({
-    message: "Welcome to Matt's API! Here are all of the endpoints...",
-    documentation_url: "https://github.com/mattsteffey/express_self_api/README.md", 
-    base_url: "https://whispering-ravine-69221.herokuapp.com/", 
+    message: "Thank you for visiting my API",
+    documentation_url: "https://github.com/mattsteffey/express-personal-api/blob/master/README.md", // CHANGE ME
+    base_url: "https://whispering-ravine-69221.herokuapp.com/", // CHANGE ME
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "About Me Page"}, 
-      {method: "POST", path: "/api/videogames", description: "Submit a new Video Game"}, 
-      {method: "DELETE", path: "/api/videogames/:id", description: "Delete a Video Game"}
+      {method: "GET", path: "/api/profile", description: "About Me"}, // CHANGE ME
+      {method: "POST", path: "/api/videogames", description: "Create a new video game"}, // CHANGE ME
+      {method: "DELETE", path: "/api/videogames/:id", description: "Delete a video game"}
     ]
   });
 });
 
 
 
-app.get('/api/videogames', function(req, res){
-  db.videogames.find(function(err, airplanes){
-    if(err){res.send("There has been an error retrieving videogames.",err);}
-    res.json(videogames);
-  });
-});
 
 /**********
  * SERVER *
