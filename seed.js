@@ -33,13 +33,13 @@ var new_VideoGames = [
 
 
 
-// db.VideoGames.remove({}, function(err, VideoGames){
-// 	if(err){console.log('Error:',err);}
-// 	else{
-// 		db.VideoGames.create(new_VideoGames, function(err, myAirplanes){
-// 			if(err){return console.log('Error:', err);}
-// 			console.log('Created New Game');
-// 			process.exit();
-// 		});
-// 	}
-// });
+db.VideoGames.remove({}, function(err, VideoGames){
+	if(err){console.log('Error:',err);}
+	else{
+		db.VideoGames.create(new_VideoGames, function(err, myAirplanes){
+			if(err){return console.log('Error:', err);}
+			console.log('Created New Game');
+			process.exit();
+		});
+	}
+});

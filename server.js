@@ -49,9 +49,12 @@ app.get('/api', function api_index(req, res) {
   });
 });
 
+
+
 app.get('/api/videogames', function(req, res){
-  db.VideoGames.find(function(err, videogames){
-    res.json(VideoGames);
+  db.videogames.find(function(err, airplanes){
+    if(err){res.send("There has been an error retrieving videogames.",err);}
+    res.json(videogames);
   });
 });
 
