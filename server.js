@@ -106,7 +106,7 @@ app.get('/api', function api_index(req, res) {
     woops_i_has_forgot_to_document_all_my_endpoints: true, // CHANGE ME ;)
     message: "This is my Personal API",
     documentation_url: "https://github.com/mattsteffey/express-personal-api/blob/master/README.md", // CHANGE ME
-    base_url: "", // CHANGE ME
+    base_url: "https://polar-forest-64647.herokuapp.com/", // CHANGE ME
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "About me"}, // CHANGE ME
