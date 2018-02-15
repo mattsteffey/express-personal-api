@@ -16,11 +16,11 @@ var db = require('./models');
 
 app.get('/api/profile', function(req, res){
   res.json ({
-    name: "RJ",
-    github_link: "https://github.com/rjmcbain",
-    github_image: "https://avatars2.githubusercontent.com/u/33466125?s=460&v=4",
+    name: "Matt Steffey",
+    github_link: "https://github.com/mattsteffey",
+    github_image: "https://avatars2.githubusercontent.com/u/33659379?s=460&v=4",
     current_city: "Denver",
-    pets:[{name: "Ace", type: "Dog", breed: "Boxer"}]
+    pets:[{name: "Bronson", type: "Dog", breed: "Mix"}]
   });
 });
 /**********
@@ -104,12 +104,12 @@ app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
   res.json({
     woops_i_has_forgot_to_document_all_my_endpoints: true, // CHANGE ME ;)
-    message: "Welcome to my personal api! Here's what you need to know!",
-    documentation_url: "https://github.com/rjmcbain/express-personal-api/blob/master/README.md", // CHANGE ME
-    base_url: "https://dry-tundra-96948.herokuapp.com/", // CHANGE ME
+    message: "This is my Personal API",
+    documentation_url: "https://github.com/mattsteffey/express-personal-api/blob/master/README.md", // CHANGE ME
+    base_url: "", // CHANGE ME
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Dis About Me"}, // CHANGE ME
+      {method: "GET", path: "/api/profile", description: "About me"}, // CHANGE ME
       {method: "POST", path: "/api/videogames", description: "E.g. Create a new video game"}, // CHANGE ME
       {method: "DELETE", path: "/api/videogames/:id", description: "Delete a video game"}
     ]
